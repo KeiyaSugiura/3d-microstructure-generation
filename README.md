@@ -1,1 +1,1 @@
-# 3d_microstructure_generation
+# 3d-microstructure-generation
