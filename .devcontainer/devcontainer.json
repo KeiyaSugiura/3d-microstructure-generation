@@ -1,0 +1,38 @@
+{
+    "name": "3d-microstructure-generation",
+    
+    "dockerComposeFile": "docker-compose.yml",
+    
+    "service": "3d-microstructure-generation",
+    
+    "workspaceFolder": "/home/3d-microstructure-generation",
+    
+    "customizations": {
+        "vscode":{
+            "extensions": [
+                "ms-vscode-remote.remote-containers",
+                "GitHub.github-vscode-theme",
+                "PKief.material-icon-theme",
+                "MS-CEINTL.vscode-language-pack-ja",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.pylint",
+                "njpwerner.autodocstring",
+                "yzhang.markdown-all-in-one",
+                "shd101wyy.markdown-preview-enhanced",
+                "janisdd.vscode-edit-csv",
+                "mechatroner.rainbow-csv",
+                "tomoki1207.pdf",
+                "analytic-signal.preview-tiff",
+                "ms-azuretools.vscode-docker",
+                "eamodio.gitlens",
+                "oderwat.indent-rainbow",
+                "ms-toolsai.jupyter",
+                "ionutvmi.path-autocomplete",
+                "usernamehw.errorlens",
+                "hoovercj.vscode-power-mode",
+                "GitHub.copilot"
+            ]
+        }
+    }
+}

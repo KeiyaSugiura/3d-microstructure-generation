@@ -1,0 +1,57 @@
+# 一般
+project_name: 3d-microstructure-generation
+material_name: DP1
+run_name: debug
+
+# 入力データ
+num_phases: 2
+input_paths: ['../input/DP1/DP1_xy0.png', '../input/DP1/DP1_zx0.png', '../input/DP1/DP1_yz0.png']
+
+# 前処理・データオーギュメンテーション
+crop_size: 256
+num_crops: 32 * 100
+
+# デバイス設定
+ngpu: 1
+
+# データローダー
+dataloader:
+  params:
+    shuffle: True
+    num_workers: 0
+    pin_memory: True
+
+# 学習条件・ハイパラ
+seed: 42
+num_epochs: 15
+critic_iters: 10
+batch_size: 32
+
+# オプティマイザー
+optimizer:
+  name: Adam
+  params:
+    lr: 1.0e-4
+    betas: [0.9, 0.99]
+
+# ロス関数
+lambda: 10
+
+# ノイズ
+z_dim: 64
+z_size: 4
+
+# モデル
+generator:
+  params:
+    gf: [64, 512, 256, 128, 64, 32, 2]
+    gk: [4, 4, 4, 4, 4, 4]
+    gs: [2, 2, 2, 2, 2, 2]
+    gp: [2, 2, 2, 2, 2, 3]
+
+critic:
+  params:
+    cf: [2, 32, 64, 128, 256, 512, 1]
+    ck: [4, 4, 4, 4, 4, 4]
+    cs: [2, 2, 2, 2, 2, 2]
+    cp: [1, 1, 1, 1, 1, 0]

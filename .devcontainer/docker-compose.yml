@@ -1,0 +1,20 @@
+version: '3.10'
+
+services:
+  3d-microstructure-generation:
+    build:
+      context: ../
+      dockerfile: ./.devcontainer/Dockerfile
+    image: 3d-microstructure-generation
+    container_name: 3d-microstructure-generation
+    stdin_open: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+    volumes:
+      - ..:/home/3d-microstructure-generation
