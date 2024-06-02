@@ -160,5 +160,3 @@ cython_debug/
 #.idea/
 
 wandb/
-output/
-mipha_output/
